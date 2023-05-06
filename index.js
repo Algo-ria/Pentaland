@@ -1,3 +1,13 @@
+let x, y;
+function getUserCanvas() {
+
+    x = document.getElementById(`canvas-x`).value;
+    y = document.getElementById(`canvas-y`).value;
+
+    console.log("x= ",x);
+    console.log("y= ",y);
+}
+
 const letters = [
    {
       letter: "F",
