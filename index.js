@@ -4,6 +4,9 @@ function generateBoard(width, height) {
       height = randomNumber();
    }
 
+   width = width < 5 ? 5 : width;
+   height = height <5 ? 5 : height;
+
    return Array.from({ length: width }, slot => Array.from({ length: height }, slot => 0));
    
 }
