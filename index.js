@@ -1,3 +1,16 @@
+let x, y;
+function getUserCanvas() {
+
+    x = document.getElementById(`canvas-x`).value;
+    y = document.getElementById(`canvas-y`).value;
+
+    const arrayBoard = generateBoard(x,y);
+    drawCanvas(arrayBoard);
+    console.log("x= ",x);
+    console.log("y= ",y);
+
+}
+
 const letters = [
    {
       letter: "F",
@@ -55,6 +68,19 @@ function generateBoard(width, height) {
    return Array.from({ length: width }, (slot) =>
       Array.from({ length: height }, (slot) => 0)
    );
+}
+
+function drawCanvas(arrayOfArrays){
+    const canvas = document.getElementById(`canvas`);
+    arrayOfArrays.forEach( rowArray => {
+     const row = document.createElement('div');
+            rowArray.forEach( element => {
+                const col = document.createElement(`div`);
+                row.appendChild(col);
+            })
+        canvas.appendChild(row);
+    })
+
 }
 
 function randomNumber(max, min) {
